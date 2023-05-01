@@ -33,8 +33,8 @@
             <td><%= student.gender %></td> 
             <td><%= student.userlevel %></td>
             <td><a href="/view/<%= student.id %>" class="btn btn-outline-info">View</a></td>
-            <td><a href="/update/<%= student.id %>" class="btn btn-outline-secondary">Update</a></td>
-            <td><form action="/delete">
+            <td><a href="/edit/<%= student.id %>" class="btn btn-outline-secondary">Update</a></td>
+            <td><form action="/delete/<%= student.id %>?_method=DELETE" method="post">
               <button type="submit" class="btn btn-outline-danger">Delete</button>
             </form></td>
           </tr>
