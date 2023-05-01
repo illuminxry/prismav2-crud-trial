@@ -10,13 +10,13 @@ exports.getEdit = async(req,res) => {
   }
 }
 exports.postEdit = async (req, res) => {
-  const { id,name, program, yearlevel, gender, userlevel } = req.body;
+  const { id, name, program, yearlevel, gender, userlevel } = req.body;
   try {
     const updatedStudent = await prisma.Student_Info.update({
-      where: { id: Object(id) },
+      where: { id : id},
       data: { name, program, yearlevel, gender, userlevel },
     });
-    res.redirect('/view');
+    res.redirect("/view");
   } catch (error) {
     console.log(error);
   }
