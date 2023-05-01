@@ -1,5 +1,5 @@
 const {PrismaClient} = require("@prisma/client")
-var prisma = new PrismaClient()
+var prisma = new PrismaClient();
 
 exports.getCreate = (req,res) => {
     res.render('create');
