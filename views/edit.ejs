@@ -1,0 +1,53 @@
+<!-- <h1>Object ID   : <%= student.id%> </h1>
+<br>
+<h1>Student Name: <%= student.name%> </h1>
+<br>
+<h1>Program: <%= student.program%></h1>
+<br>
+<h1>Year Level: <%= student.yearlevel%> </h1>
+<br>
+<h1>Gender : <%= student.gender%> </h1>
+<br>
+<h1>User Level : <%= student.userlevel%> </h1>
+<br> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron"></div>
+    <div class="container">
+      <form action="" method="" class="form-group">
+        <label for="">Name</label>
+        <input type="text" name="name" class="form-control" value="<%= student.name %>" >
+        <br>
+        <label for="">Program</label>
+        <input type="text" name="program" class="form-control" value="<%= student.program %>" >
+        <br>
+        <label for="">Year Level</label>
+        <input type="text" name="yearlevel" class="form-control" value="<%= student.yearlevel %>" >
+        <br>
+        <label for="">Gender</label>
+        <input type="text" name="gender" class="form-control" value="<%= student.gender %>" > 
+        <br>
+        <label for="">User Level</label>
+        <input type="text" name="userlevel" class="form-control" value="<%= student.userlevel %>" >
+        <br>
+        <a href="/" class="btn-link">Go back</a>
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
