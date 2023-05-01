@@ -25,7 +25,7 @@
   <body>
     <div class="jumbotron"></div>
     <div class="container">
-      <form method="POST" action="/edit/{{ student.id }}" class="form-group">
+      <form method="POST" action="/edit/<%= student.id %>" class="form-group">
         <label for="">ID</label>
         <input type="text" name="name" class="form-control" value="<%= student.id %>" disabled>
         <br>
