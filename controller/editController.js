@@ -1,5 +1,5 @@
 const {PrismaClient} = require("@prisma/client")
-var prisma = new PrismaClient()
+var prisma = new PrismaClient();
 
 exports.getEdit = async(req,res) => {
   try {
@@ -9,3 +9,15 @@ exports.getEdit = async(req,res) => {
     console.log(error);
   }
 }
+exports.postEdit = async (req, res) => {
+  const { id,name, program, yearlevel, gender, userlevel } = req.body;
+  try {
+    const updatedStudent = await prisma.Student_Info.update({
+      where: { id: Object(id) },
+      data: { name, program, yearlevel, gender, userlevel },
+    });
+    res.redirect('/view');
+  } catch (error) {
+    console.log(error);
+  }
+};

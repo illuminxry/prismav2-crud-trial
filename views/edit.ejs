@@ -25,7 +25,10 @@
   <body>
     <div class="jumbotron"></div>
     <div class="container">
-      <form action="" method="" class="form-group">
+      <form method="POST" action="/edit/{{ student.id }}" class="form-group">
+        <label for="">ID</label>
+        <input type="text" name="name" class="form-control" value="<%= student.id %>" disabled>
+        <br>
         <label for="">Name</label>
         <input type="text" name="name" class="form-control" value="<%= student.name %>" >
         <br>
@@ -42,6 +45,7 @@
         <input type="text" name="userlevel" class="form-control" value="<%= student.userlevel %>" >
         <br>
         <a href="/" class="btn-link">Go back</a>
+        <input class="btn btn-outline-success btn-lg" type="submit" value="submit">
       </form>
     </div>
     <!-- Optional JavaScript -->
