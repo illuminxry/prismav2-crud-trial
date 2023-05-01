@@ -5,7 +5,8 @@
 3. npx prisma init
 4.1 modify env file to your mongodb database url
 4.2 modify the prisma file located @ /prisma/schema-prisma
-4.3  insert this in the prisma file
+4.3 change datasource db provider to mongodb
+4.4  insert this after datasource db closing curly brace
     model Student_Info {
           id String @id @default(auto()) @map("_id") @db.ObjectId
           name String?
@@ -21,4 +22,4 @@
     "start": "nodemon app.js"
   },
 8. npm start
-9. open browser type localhost:3000 for data table, localhost:3000/create to insert user
+9. open browser type localhost:3000 for data table
