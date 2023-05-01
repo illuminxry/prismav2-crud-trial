@@ -4,10 +4,10 @@
 2. type express
 3. npx prisma init
 4. modify env file to your mongodb database url
-modify the prisma file located @ /prisma/schema-prisma
-change datasource db provider to mongodb
-insert this after datasource db closing curly brace
-    model Student_Info {
+5. modify the prisma file located @ /prisma/schema-prisma
+6. change datasource db provider to mongodb
+7. insert this after datasource db closing curly brace
+    -> model Student_Info {
           id String @id @default(auto()) @map("_id") @db.ObjectId
           name String?
           program String?
@@ -15,11 +15,11 @@ insert this after datasource db closing curly brace
           gender String
           userlevel String?
      }
-5. prisma db push
-6. prisma generate client
-7. modify package.json scripts to 
-  "scripts": {
+8. prisma db push
+9. prisma generate client
+10. modify package.json scripts to 
+11.  "scripts": {
     "start": "nodemon app.js"
   },
-8. npm start
-9. open browser type localhost:3000 for data table
+12. npm start
+13. open browser type localhost:3000 for data table
