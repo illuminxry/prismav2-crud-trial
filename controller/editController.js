@@ -10,16 +10,34 @@ exports.getEdit = async(req,res) => {
   }
 }
 exports.postEdit = async (req, res) => {
-  const { name, program, yearlevel, gender, userlevel } = req.body;
-  const {id} = req.params;
+  const { firstname, middlename, lastname, birthdate, gender, civilstatus, country, region, province, city, barangay, zipcode, address, hobbies, keya, keyb } = req.body;
+  const { id } = req.params;
   try {
-    const updatedStudent = await prisma.Student_Info.update({
-      where: { id : id},
-      data: { name, program, yearlevel, gender, userlevel },
+    const updatedStudent = await prisma.student_Info.update({
+      where: { id: id },
+      data: { 
+        firstname, 
+        middlename, 
+        lastname, 
+        birthdate, 
+        gender, 
+        civilstatus, 
+        country, 
+        region, 
+        province, 
+        city, 
+        barangay, 
+        zipcode, 
+        address, 
+        hobbies, 
+        keya, 
+        keyb 
+      },
     });
-    const student = await prisma.Student_Info.findUnique({ where: { id: id }});
+    const student = await prisma.student_Info.findUnique({ where: { id: id } });
     res.redirect('/view/' + id);
   } catch (error) {
     console.log(error);
   }
 };
+

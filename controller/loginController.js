@@ -19,7 +19,7 @@ exports.postLogin = async (req, res) => {
             const decryptedpw = decrypt(user.password, user.shift);
             if (decryptedpw === password) {
                 console.log(`logged in as user email-> ${email}, user password-> ${decryptedpw}, user encrypted pw -> ${user.password}`);
-                res.redirect('/');
+                res.redirect('/home');
             } else {
                 res.send('Incorrect Email and/or Password');
                 console.log(error);
