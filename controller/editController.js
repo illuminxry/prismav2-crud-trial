@@ -18,7 +18,6 @@ exports.postEdit = async (req, res) => {
       data: { name, program, yearlevel, gender, userlevel },
     });
     const student = await prisma.Student_Info.findUnique({ where: { id: id }});
-    // res.redirect('view', { student });
     res.redirect('/view/' + id);
   } catch (error) {
     console.log(error);
