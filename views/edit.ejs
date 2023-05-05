@@ -26,26 +26,50 @@
     <div class="jumbotron"></div>
     <div class="container">
       <form method="POST" action="/edit/<%= student.id %>" class="form-group">
-        <label for="">ID</label>
-        <input type="text" name="name" class="form-control" value="<%= student.id %>" disabled>
+        <label for="">First Name</label>
+        <input type="text" name="firstname" class="form-control" value="<%= student.firstname %>" >
         <br>
-        <label for="">Name</label>
-        <input type="text" name="name" class="form-control" value="<%= student.name %>" >
+        <label for="">Middle Name</label>
+        <input type="text" name="middlename" class="form-control" value="<%= student.middlename %>" >
         <br>
-        <label for="">Program</label>
-        <input type="text" name="program" class="form-control" value="<%= student.program %>" >
+        <label for="">Last Name</label>
+        <input type="text" name="lastname" class="form-control" value="<%= student.lastname%>" >
         <br>
-        <label for="">Year Level</label>
-        <input type="text" name="yearlevel" class="form-control" value="<%= student.yearlevel %>" >
+        <label for="">Birthdate</label>
+        <input type="text" name="birthdate" class="form-control" value="<%= student.birthdate%>" >
         <br>
         <label for="">Gender</label>
-        <input type="text" name="gender" class="form-control" value="<%= student.gender %>" > 
+        <input type="text" name="gender" class="form-control" value="<%= student.gender%>" >
         <br>
-        <label for="">User Level</label>
-        <input type="text" name="userlevel" class="form-control" value="<%= student.userlevel %>" >
+        <label for="">Civil Status</label>
+        <input type="text" name="civilstatus" class="form-control" value="<%= student.civilstatus%>" >
         <br>
-        <a href="/" class="btn-link">Go back</a>
-        <input class="btn btn-outline-success btn-lg" type="submit" value="submit">
+        <label for="">Country</label>
+        <input type="text" name="country" class="form-control" value="<%= student.country%>" >
+        <br>
+        <label for="">Region</label>
+        <input type="text" name="region" class="form-control" value="<%= student.region%>" >
+        <br>
+        <label for="">Province</label>
+        <input type="text" name="province" class="form-control" value="<%= student.province%>" >
+        <br>
+        <label for="">City</label>
+        <input type="text" name="city" class="form-control" value="<%= student.city%>" >
+        <br>
+        <label for="">Barangay</label>
+        <input type="text" name="barangay" class="form-control" value="<%= student.barangay%>" >
+        <br>
+        <label for="">Zip Code</label>
+        <input type="text" name="zipcode" class="form-control" value="<%= student.zipcode%>" >
+        <br>
+        <label for="">Address</label>
+        <input type="text" name="address" class="form-control" value="<%= student.address%>" >
+        <br>
+        <label for="">Hobbies</label>
+        <input type="text" name="hobbies" class="form-control" value="<%= student.hobbies%>" >
+        <br>
+        <a href="/home" class="btn-link">Go back</a>
+        <input class="btn btn-outline-success btn-lg" type="submit" value="Update">
       </form>
     </div>
     <!-- Optional JavaScript -->
