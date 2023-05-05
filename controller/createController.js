@@ -1,26 +1,56 @@
-const {PrismaClient} = require("@prisma/client")
+const { PrismaClient } = require("@prisma/client")
 var prisma = new PrismaClient();
 
-exports.getCreate = (req,res) => {
+exports.getCreate = (req, res) => {
     res.render('create');
 }
-exports.postCreate = async(req,res) =>{
-    try{
-        const { name, program , yearlevel, gender, userlevel} = req.body;
-        var student = await prisma.Student_Info.create({
-            data:{
-                name : name,
-                program: program,
-                yearlevel:yearlevel,
-                gender: gender,
-                userlevel: userlevel,
-            }
+exports.postCreate = async (req, res) => {
+    try {
+        const {
+            firstname,
+            middlename,
+            lastname,
+            birthdate,
+            gender,
+            civilstatus,
+            country,
+            region,
+            province,
+            city,
+            barangay,
+            zipcode,
+            address,
+            hobbies,
+            keya,
+            keyb
+        } = req.body;
+
+        const student = await prisma.student_Info.create({
+            data: {
+                firstname,
+                middlename,
+                lastname,
+                birthdate: new Date(birthdate),
+                gender,
+                civilstatus,
+                country,
+                region,
+                province,
+                city,
+                barangay,
+                zipcode,
+                address,
+                hobbies,
+                keya,
+                keyb,
+            },
         });
-        console.log('Created user record successfully')
-       } catch(error){
+
+        console.log('Created student record successfully');
+    } catch (error) {
         console.error(error);
-       }finally{
+    } finally {
         await prisma.$disconnect();
-       }
+    }
     res.redirect('create');
-}
+};

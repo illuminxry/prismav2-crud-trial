@@ -11,27 +11,45 @@
   </head>
   <body>
     <div class="jumbotron"></div>
-      <div class="container">
+      <div class="">
 
         <a href="/create" class="btn btn-outline-dark">Insert Data</a>
         <table class="table">
           <tr style="text-align: center;">
             <td>Object ID</td>
-            <td>Student Name</td>
-            <td>Program</td>
-            <td>Year Level</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>Last Name</td>
+            <td>Birthdate</td>
             <td>Gender</td>
-            <td>User Level</td>
+            <td>civilstatus</td>
+            <td>country</td>
+            <td>region</td>
+            <td>province</td>
+            <td>city</td>
+            <td>baranggay</td>
+            <td>zipcode</td>
+            <td>address</td>
+            <td>hobbies</td>
             <td colspan="3">Action</td>
           </tr>
           <% students.forEach((student) => {%> 
           <tr style="text-align: center;">
             <td><%= student.id %></td>
-            <td><%= student.name %></td>
-            <td><%= student.program %></td>
-            <td><%= student.yearlevel %></td>
-            <td><%= student.gender %></td> 
-            <td><%= student.userlevel %></td>
+            <td><%= student.firstname %></td>
+            <td><%= student.middlename %></td>
+            <td><%= student.lastname %></td>
+            <td><%= student.birthdate %></td>
+            <td><%= student.gender %></td>
+            <td><%= student.civilstatus %></td>
+            <td><%= student.country %></td>
+            <td><%= student.region %></td>
+            <td><%= student.province %></td>
+            <td><%= student.city %></td>
+            <td><%= student.barangay %></td>
+            <td><%= student.zipcode %></td>
+            <td><%= student.address %></td>
+            <td><%= student.hobbies %></td>
             <td><a href="/view/<%= student.id %>" class="btn btn-outline-info">View</a></td>
             <td><a href="/edit/<%= student.id %>" class="btn btn-outline-secondary">Update</a></td>
             <td>
