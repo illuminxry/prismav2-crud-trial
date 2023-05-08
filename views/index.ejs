@@ -16,7 +16,7 @@
         <a href="/create" class="btn btn-outline-dark">Insert Data</a>
         <table class="table">
           <tr style="text-align: center;">
-            <td>Object ID</td>
+            <!-- <td>Object ID</td> -->
             <td>First Name</td>
             <td>Middle Name</td>
             <td>Last Name</td>
@@ -32,11 +32,12 @@
             <td>address</td>
             <td>hobbies</td>
             <td>date created</td>
+            <td>Date Updated</td>
             <td colspan="3">Action</td>
           </tr>
           <% students.forEach((student) => {%> 
           <tr style="text-align: center;">
-            <td><%= student.id %></td>
+            <!-- <td><%= student.id %></td> -->
             <td><%= student.firstname %></td>
             <td><%= student.middlename %></td>
             <td><%= student.lastname %></td>
@@ -52,6 +53,7 @@
             <td><%= student.address %></td>
             <td><%= student.hobbies %></td>
             <td><%= student.createdAt %></td>
+            <td><%= student.updatedAt %></td>
             <td><a href="/view/<%= student.id %>" class="btn btn-outline-info">View</a></td>
             <td><a href="/edit/<%= student.id %>" class="btn btn-outline-secondary">Update</a></td>
             <td>
