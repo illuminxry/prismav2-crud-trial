@@ -25,6 +25,8 @@
   <body>
     <div class="jumbotron"></div>
     <div class="container">
+      <h1>Current Date and Time</h1>
+      <p name="datetime"></p>
       <form method="POST" action="/edit/<%= student.id %>" class="form-group">
         <label for="">First Name</label>
         <input type="text" name="firstname" class="form-control" value="<%= student.firstname %>" >
@@ -74,6 +76,20 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      function showDateTime() {
+        var currentDate = new Date();
+        var date = currentDate.toISOString().split("T")[0];
+        var time = currentDate.toISOString().split("T")[1].split("Z")[0];
+        var offset = (currentDate.getTimezoneOffset() / 60) * -1;
+        var offsetHours = Math.floor(offset);
+        var offsetMinutes = (offset - offsetHours) * 60;
+        var timezoneOffset = (offsetHours < 10 ? "0" : "") + offsetHours + ":" + (offsetMinutes < 10 ? "0" : "") + offsetMinutes;
+        var dateTime = date + "T" + time + "." + currentDate.getMilliseconds() + (timezoneOffset < 0 ? "-" : "+") + timezoneOffset;
+        document.getElementsByName("datetime")[0].innerHTML = dateTime;
+      }
+      window.onload = showDateTime;
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
