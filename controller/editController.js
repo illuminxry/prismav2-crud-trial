@@ -10,7 +10,7 @@ exports.getEdit = async(req,res) => {
   }
 }
 exports.postEdit = async (req, res) => {
-  const { firstname, middlename, lastname, birthdate, gender, civilstatus, country, region, province, city, barangay, zipcode, address, hobbies, keya, keyb } = req.body;
+  const { firstname, middlename, lastname, birthdate, gender, civilstatus, country, region, province, city, barangay, zipcode, address, hobbies, keya, keyb, datetime} = req.body;
   const { id } = req.params;
   try {
     const updatedStudent = await prisma.student_Info.update({
@@ -19,7 +19,7 @@ exports.postEdit = async (req, res) => {
         firstname, 
         middlename, 
         lastname, 
-        birthdate, 
+        birthdate : new Date(birthdate).toISOString(), 
         gender, 
         civilstatus, 
         country, 
@@ -31,9 +31,11 @@ exports.postEdit = async (req, res) => {
         address, 
         hobbies, 
         keya, 
-        keyb 
+        keyb,
+        updatedAt: new Date(), 
       },
     });
+    console.log("Record updated successfully at: " + Date())
     const student = await prisma.student_Info.findUnique({ where: { id: id } });
     res.redirect('/view/' + id);
   } catch (error) {
