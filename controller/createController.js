@@ -30,7 +30,7 @@ exports.postCreate = async (req, res) => {
                 firstname,
                 middlename,
                 lastname,
-                birthdate: new Date(birthdate),
+                birthdate: new Date(birthdate).toISOString(),
                 gender,
                 civilstatus,
                 country,
@@ -45,8 +45,7 @@ exports.postCreate = async (req, res) => {
                 keyb,
             },
         });
-
-        console.log('Created student record successfully');
+        console.log('Created student record successfully at: ' + Date());
     } catch (error) {
         console.error(error);
     } finally {
