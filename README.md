@@ -12,7 +12,7 @@
   firstname    String?
   middlename   String?
   lastname     String?
-  birthdate    String?
+  birthdate    DateTime?
   gender       String?
   civilstatus  String?
   country      String?
@@ -25,6 +25,8 @@
   hobbies      String?
   keya         String?
   keyb         String?
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @default(now())
 }
 model User {
   id        String        @id @default(auto()) @map("_id") @db.ObjectId
